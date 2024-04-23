@@ -6,17 +6,45 @@ main .hero-container {
   padding: 0;
 }
 
+.section.hero-container .default-content-wrapper {
+  display: none;
+}
+
 .hero {
   position: relative;
   padding: 32px;
-  min-height: 300px;
+  min-height: 100vh;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  & div {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+  }
 }
 
 .hero h1 {
   max-width: 1200px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   color: white;
+}
+
+.hero a {
+  position: relative;
 }
 
 .hero picture {
@@ -31,4 +59,57 @@ main .hero-container {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+
+.white {
+  background-color: #283048;
+  color: white;
+}
+
+.cards.block > ul > li {
+  background: transparent;
+}
+
+.hero-img {
+  height: 100vh;
+  color: white;
+
+  & div > div p:first-child{
+    position: inherit;
+  }
+
+  picture > img {
+    filter: blur(7px);
+  }
+  
+  p,  h2 {
+    position: relative;
+  }
+}
+
+.columns {
+  background-color: #10a5e2;
+}
+
+
+nav {
+  flex-direction: column;
+}
+
+.nav-sections,
+.nav-tools {
+  color: white;
+}
+
+.nav-brand {
+  margin-top: 2rem;
+  background-image: url(/images/logo.png);
+  background-repeat: no-repeat;
+  min-width: 190px;
+  min-height: 125px;
+
+  & a {
+    font-size: 0;
+  }
 }
